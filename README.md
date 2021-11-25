@@ -15,9 +15,9 @@ run `java -jar scheduler-v<version>.jar` with desired parameters
 
 `second` - number of seconds used for the fix rate. Your custom command will be run at every number of seconds you specify here.
 
-`third` - number of seconds used for the fix rate. Your custom command will be run at every number of seconds you specify here.
+`third` - Log file pattern. This file will be created when ScheduleTask starts.
 
-`forth` - file to check for
+`forth` - file to check if it is present or not
 
 `fifth` - custom terminal command
 
