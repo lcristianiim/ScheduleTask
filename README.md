@@ -1,6 +1,9 @@
 # ScheduleTask
 You want a program to run for a specified amount of time and in that time to run you're specified terminal command at a fixed specified interval of time conditioned by a presence of a specified file? Then Stop searching ScheduleTask is here to help.
 
+## Prerequisites
+java 8
+
 ## Install
 run `build.sh` # This will create the runnable jar file. (to modify the version edit the `build.sh` script)
  
@@ -12,9 +15,9 @@ run `java -jar scheduler-v<version>.jar` with desired parameters
 
 `second` - number of seconds used for the fix rate. Your custom command will be run at every number of seconds you specify here.
 
-`third` - number of seconds used for the fix rate. Your custom command will be run at every number of seconds you specify here.
+`third` - Log file pattern. This file will be created when ScheduleTask starts.
 
-`forth` - file to check for
+`forth` - file to check if it is present or not
 
 `fifth` - custom terminal command
 
