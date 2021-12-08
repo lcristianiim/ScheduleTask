@@ -30,9 +30,7 @@ public class Operations {
         if(!service.isLogFileAlreadyCreated()) {
             service.createLogFile();
             Duration duration = Duration.ofSeconds(howLongToHaveItStarted);
-            long howManyHoursToRun = duration.toHours();
-            long howManyMinutesToRun = duration.toMinutes();
-            long howManySecondsToRun = duration.getSeconds();
+            String durationString = Duration.ofSeconds(howLongToHaveItStarted).abs().toString().replaceAll("PT", "");
 
             LocalDateTime startedNow = service.getNow();
             LocalDateTime end = startedNow.plus(duration);
@@ -41,8 +39,8 @@ public class Operations {
             long endSeconds = end.getSecond();
 
             String startMessage =
-                    String.format("Starter started. Will run for: %dh %dm %ds. It will stop at: %d:%d:%d",
-                            howManyHoursToRun, howManyMinutesToRun, howManySecondsToRun, endHours, endMinutes, endSeconds);
+                    String.format("Starter started. Will run for: %s. It will stop at: %d:%d:%d",
+                            durationString, endHours, endMinutes, endSeconds);
             service.addLog(startMessage);
         }
     }
